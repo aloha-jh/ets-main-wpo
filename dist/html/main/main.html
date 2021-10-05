@@ -5,16 +5,109 @@
     <meta http-equiv="content-type" content="text/html; charset=EUC-KR">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta httpequiv="x-dns-prefetch-control" content="on"/>
-    <meta http-equiv="cache-control" content="max-age=31536000" />
-    <meta http-equiv="cache-control" content="no-cache" /> 
+    <meta http-equiv="Cache-Control" content="max-age=31536000" />    
+    <meta http-equiv="Cache-Control" content="public" /> 
     <link rel="dns-prefetch" href="https://www.etoos.com"/>    
     <link rel="dns-prefetch" href="https://img.etoos.com"/>   
-    <link rel="preload" href="../../common/css/etoos_main2020.css"> 
-    <link rel="preload" href="../../common/js/etoos_main2020.js"> 
+    <link rel="preload" href="../../common/css/etoos_main2020.css" as="style"> 
+    <link rel="preload" href="../../common/js/etoos_main2020.js" as="script"> 
     <title>??????</title>
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="../../common/css/etoos_main2020.css">
+    <!-- Javascript Files -->
+    <script defer type="text/javascript">
+        // ?????? ?????? ???? ??? ????
+        // ??????? ?????? ???? ??? ????
+        function getCookie( cookieName ) {
+            var search = cookieName + "=";
+            var cookie = document.cookie;
+            /* ???? ????? ?????? ??? */
+            if( cookie.length > 0 ) {
+                startIndex = cookie.indexOf( cookieName );
+                if( startIndex != -1 ) {
+                    startIndex += cookieName.length;
+                    endIndex = cookie.indexOf( ";", startIndex );
+                    if( endIndex == -1) endIndex = cookie.length;
+                    return unescape( cookie.substring( startIndex + 1, endIndex ) );
+                } else {
+                    /* ??? ???? ??? ????? ???????? ???? ??? */
+                    return false;
+                }
+            } else {
+                /* ??? ????? ???? ??? */
+                return false;
+            }
+        }
+        if( !getCookie("newyearWpop") ){
+            var url = "winopen.html"; // window open ???? ???
+            var targetValue = "notice"; // ??????? ???? ??? name value
+            var pWidth = 440; //???? ???λ?????
+            var pHeight = 688; //???? ???λ?????
+            var xPos = (document.body.clientWidth / 2) - (pWidth) - 200;
+                xPos += window.screenLeft;  //??? ????????
+            var yPos = (screen.availHeight / 2) - (pHeight / 2);
+            var Popoptions = 'left=' + xPos + ',top=' + yPos +', width=' + pWidth+ ',height=' + pHeight +', location=no,toolbar=no,menubar=no,scrollbars=no,resizable=no';
+            window.open(url, targetValue, Popoptions);
+        }
+        // ??????? ?????? ???? ??? ????        
+
+        function fnG_H_LOGIN_LAYER() {
+            if (document.getElementById("divG_H_LOGIN_LAYER").style.display == "none") {
+                document.getElementById("divG_H_LOGIN_LAYER").style.display = "block";
+            } else {
+                document.getElementById("divG_H_LOGIN_LAYER").style.display = "none";
+            }
+        }
+
+        if ("" == "1") {
+            document.loginForm.rememberID.checked = true;
+            document.loginForm.mem_id.value = "";
+            document.loginForm.mem_id.style.backgroundImage = '';
+        }
+
+        function fnG_H_GO_LOGIN() {
+            var strG_H_MEM_ID; strG_H_MEM_ID = document.loginForm.mem_id.value + "";
+            if (strG_H_MEM_ID.length == 0 || strG_H_MEM_ID == "?????" || strG_H_MEM_ID == "") {
+                alert("????? ????? ?????");
+                document.loginForm.mem_id.value = "";
+                document.loginForm.mem_id.focus();
+                return false;
+            } else if (document.loginForm.pwd.value.length == 0) {
+                alert("?н????? ????? ?????");
+                document.loginForm.pwd.value = "";
+                document.loginForm.pwd.focus();
+                return false;
+            } else if (document.loginForm.pwd.value.length < 4) {
+                alert("?н????? 4??? ??? ????? ?????");
+                document.loginForm.pwd.value = "";
+                document.loginForm.pwd.focus();
+                return false;
+            } else {
+                document.loginForm.submit();
+            }
+        }
+
+        function fnG_H_LOGIN_SELECT_VIEW() {
+            if (eval("ulID_SELECT").style.display == "none") {
+                eval("ulID_SELECT").style.display = "";
+            } else { eval("ulID_SELECT").style.display = "none"; }
+        }
+
+        function fnG_H_LOGIN_SELECT_CLICK(selectStr) {
+            document.loginForm.site_cd.value = selectStr;
+
+            if (selectStr == "0001") { eval("spnG_H_SITE_NM").innerHTML = "ETOOS"; }
+            else { eval("spnG_H_SITE_NM").innerHTML = "Koreaedu"; }
+
+            eval("ulID_SELECT").style.display = "none";
+        }
+        function fnETGRD_CLOSE() {
+            document.getElementById("divETGRD_LAYER").style.display = "none";
+        }
+    </script>
+    <!-- Bundle File -->
+    <script defer src="../../common/js/etoos_main2020.js"></script>
 </head>
 
 <body data-theme="dark">
@@ -9304,99 +9397,7 @@
         <!-- //Footer -->
     </div>
     <!-- //Wrap -->
-    <!-- Javascript Files -->
-    <script type="text/javascript">
-        // ?????? ?????? ???? ??? ????
-        // ??????? ?????? ???? ??? ????
-        function getCookie( cookieName ) {
-            var search = cookieName + "=";
-            var cookie = document.cookie;
-            /* ???? ????? ?????? ??? */
-            if( cookie.length > 0 ) {
-                startIndex = cookie.indexOf( cookieName );
-                if( startIndex != -1 ) {
-                    startIndex += cookieName.length;
-                    endIndex = cookie.indexOf( ";", startIndex );
-                    if( endIndex == -1) endIndex = cookie.length;
-                    return unescape( cookie.substring( startIndex + 1, endIndex ) );
-                } else {
-                    /* ??? ???? ??? ????? ???????? ???? ??? */
-                    return false;
-                }
-            } else {
-                /* ??? ????? ???? ??? */
-                return false;
-            }
-        }
-        if( !getCookie("newyearWpop") ){
-            var url = "winopen.html"; // window open ???? ???
-            var targetValue = "notice"; // ??????? ???? ??? name value
-            var pWidth = 440; //???? ???λ?????
-            var pHeight = 688; //???? ???λ?????
-            var xPos = (document.body.clientWidth / 2) - (pWidth) - 200;
-                xPos += window.screenLeft;  //??? ????????
-            var yPos = (screen.availHeight / 2) - (pHeight / 2);
-            var Popoptions = 'left=' + xPos + ',top=' + yPos +', width=' + pWidth+ ',height=' + pHeight +', location=no,toolbar=no,menubar=no,scrollbars=no,resizable=no';
-            window.open(url, targetValue, Popoptions);
-        }
-        // ??????? ?????? ???? ??? ????        
-
-        function fnG_H_LOGIN_LAYER() {
-            if (document.getElementById("divG_H_LOGIN_LAYER").style.display == "none") {
-                document.getElementById("divG_H_LOGIN_LAYER").style.display = "block";
-            } else {
-                document.getElementById("divG_H_LOGIN_LAYER").style.display = "none";
-            }
-        }
-
-        if ("" == "1") {
-            document.loginForm.rememberID.checked = true;
-            document.loginForm.mem_id.value = "";
-            document.loginForm.mem_id.style.backgroundImage = '';
-        }
-
-        function fnG_H_GO_LOGIN() {
-            var strG_H_MEM_ID; strG_H_MEM_ID = document.loginForm.mem_id.value + "";
-            if (strG_H_MEM_ID.length == 0 || strG_H_MEM_ID == "?????" || strG_H_MEM_ID == "") {
-                alert("????? ????? ?????");
-                document.loginForm.mem_id.value = "";
-                document.loginForm.mem_id.focus();
-                return false;
-            } else if (document.loginForm.pwd.value.length == 0) {
-                alert("?н????? ????? ?????");
-                document.loginForm.pwd.value = "";
-                document.loginForm.pwd.focus();
-                return false;
-            } else if (document.loginForm.pwd.value.length < 4) {
-                alert("?н????? 4??? ??? ????? ?????");
-                document.loginForm.pwd.value = "";
-                document.loginForm.pwd.focus();
-                return false;
-            } else {
-                document.loginForm.submit();
-            }
-        }
-
-        function fnG_H_LOGIN_SELECT_VIEW() {
-            if (eval("ulID_SELECT").style.display == "none") {
-                eval("ulID_SELECT").style.display = "";
-            } else { eval("ulID_SELECT").style.display = "none"; }
-        }
-
-        function fnG_H_LOGIN_SELECT_CLICK(selectStr) {
-            document.loginForm.site_cd.value = selectStr;
-
-            if (selectStr == "0001") { eval("spnG_H_SITE_NM").innerHTML = "ETOOS"; }
-            else { eval("spnG_H_SITE_NM").innerHTML = "Koreaedu"; }
-
-            eval("ulID_SELECT").style.display = "none";
-        }
-        function fnETGRD_CLOSE() {
-            document.getElementById("divETGRD_LAYER").style.display = "none";
-        }
-    </script>
-    <!-- Bundle File -->
-    <script defer src="../../common/js/etoos_main2020.js"></script>
+    
 </body>
 
 </html>
